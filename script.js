@@ -60,25 +60,9 @@ function song() {
     hangman();
 }
 
-
-function countChars(countfrom, displayto) {
-    var len = document.getElementById(countfrom).value.length;
-    document.getElementById(displayto).innerHTML = len;
-}
-
-function readText() {
-    word = document.getElementById('input').value;
-    hangman();
-}
-
 function hangman() {
 
     var x = word.length;
-
-    if (x == 0) {
-        alert("Please enter something into the text box.");
-        return;
-    }
 
     var y = x - 1;
     var spaces = 0;
@@ -94,14 +78,11 @@ function hangman() {
             x--;
             y--;
         }
-        else {
-            alert("Please remove any special characters.");
-            return;
-        }
 
     }
     x = word.length;
     y = x - 1;
+
     while (x > 0) {
         numChar++;
         var letter = word.substring(y, x);
@@ -328,7 +309,7 @@ function guessLetter() {
         }
     }
     if (numWrong == 7) {
-        results.innerHTML = "You lose!<br>Keep guessing until you get it right.";
+        results.innerHTML = "You lose!<br>Keep guessing until you get it right!";
         document.getElementById('again').style.display = "block";
         document.getElementById('home').style.display = "block";
 
@@ -355,6 +336,7 @@ function win() {
     var results = document.getElementById('results');
     results.style.visibility = "visible";
     results.style.color = "#00b100";
+
     if (numWrong > 6) {
         results.innerHTML = "It's about time you figured it out...";
         document.getElementById('letterBank').style.display = "none";
@@ -374,6 +356,7 @@ function win() {
             results.style.fontSize = "20px";
         }
     }
+
     else {
         results.innerHTML = "You win!";
         document.getElementById('letterBank').style.display = "none";
@@ -499,6 +482,7 @@ function hang() {
         ctx.lineTo(160, 98);
         ctx.stroke();
     }
+
     if (numWrong == 8) {
         ctx.fillRect(118, 135, 70, 120); //cover body
         ctx.lineWidth = 3;
@@ -523,6 +507,7 @@ function hang() {
         ctx.lineTo(120, 260);
         ctx.stroke();
     }
+
     if (numWrong == 9) {
         ctx.fillRect(118, 143, 70, 120); //cover body
         ctx.lineWidth = 3;
@@ -547,6 +532,7 @@ function hang() {
         ctx.lineTo(120, 270);
         ctx.stroke();
     }
+
     if (numWrong == 10) {
         ctx.fillRect(118, 148, 70, 120); //cover body
         ctx.lineWidth = 3;
@@ -571,6 +557,7 @@ function hang() {
         ctx.lineTo(100, 270);
         ctx.stroke();
     }
+
     if (numWrong == 11) {
         ctx.fillRect(90, 148, 120, 120); //cover body
         ctx.lineWidth = 3;
@@ -595,6 +582,7 @@ function hang() {
         ctx.lineTo(90, 268);
         ctx.stroke();
     }
+
     if (numWrong == 12) {
         ctx.fillRect(90, 145, 140, 120); //cover body
         ctx.lineWidth = 3;
@@ -611,6 +599,7 @@ function hang() {
         ctx.lineTo(165, 237);
         ctx.stroke();
     }
+
     if (numWrong == 13) {
         ctx.fillRect(90, 145, 160, 120); //cover body
         ctx.lineWidth = 3;
@@ -627,6 +616,7 @@ function hang() {
         ctx.lineTo(185, 250);
         ctx.stroke();
     }
+
     if (numWrong == 14) {
         ctx.fillRect(90, 145, 160, 120); //cover body
         ctx.lineWidth = 3;
