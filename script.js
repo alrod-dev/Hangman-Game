@@ -84,8 +84,10 @@ function hangman() {
     y = x - 1;
 
     while (x > 0) {
+
         numChar++;
-        var letter = word.substring(y, x);
+
+        letter = word.substring(y, x);
         if (letter === " ") {
             document.getElementById('letter' + x).innerHTML = "&nbsp;";
             document.getElementById('letter' + x).style.visibility = "hidden";
@@ -236,14 +238,17 @@ function draw() {
 // split words in the game
 
 function splitWords() {
+
     var placeKeep = 0;
     var countBack = 16;
     if (numChar > 15) {
         while (countBack > 1) {
+
             if (document.getElementById('letter16').innerHTML == "&nbsp;") {
                 document.getElementById('underline16').style.width = "0px";
                 document.getElementById('underline16').style.marginRight = "0px";
             }
+
             if (document.getElementById('letter' + countBack).innerHTML == "&nbsp;") {
                 document.getElementById('underline' + countBack).style.width = (document.getElementById('underline1').offsetWidth) * (16 - countBack) + "px";
                 placeKeep = countBack;
